@@ -1,0 +1,13 @@
+FROM alpine:3.7
+
+LABEL maintainer="Leyou Hong <lawrencehongengineer@gmail.com>" \
+  org.label-schema.name="Drone Workshop" \
+  org.label-schema.vendor="Leyou Hong" \
+  org.label-schema.schema-version="1.0"
+
+RUN apk add --no-cache ca-certificates && \
+  rm -rf /var/cache/apk/*
+
+ADD release/linux/amd64/telo /bin/
+
+ENTRYPOINT ["/bin/telo"]
