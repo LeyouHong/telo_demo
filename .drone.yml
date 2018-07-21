@@ -35,7 +35,7 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     default_tags: true
     default_suffix: alpine
-    repo: lhong/telo_test
+    repo: lhong/telo
     when:
       event: [ push, tag ]
       local: false
