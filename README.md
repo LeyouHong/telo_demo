@@ -1,4 +1,4 @@
-# drone-golang-example
+# CICD project (drone + docker + github)
 
 Golang example with drone service
 
