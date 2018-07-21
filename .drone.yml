@@ -27,18 +27,6 @@ pipeline:
     commands:
       - make build_linux_i386
 
-  publish_linux_amd64:
-    image: plugins/docker:17.05
-    pull: true
-    secrets: [ docker_username, docker_password ]
-    group: release
-    repo: lhong/telo_test
-    auto_tag: true
-    dockerfile: Dockerfile
-    when:
-      event: [ push, tag ]
-      local: false
-
   publish_alpine:
     image: plugins/docker
     group: release
