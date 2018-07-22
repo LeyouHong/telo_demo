@@ -14,7 +14,7 @@ type Redis struct {
 func (r *Redis) Get(key string) string {
 	val, err := r.Rediscli.Get(key).Result()
 	if err != nil {
-		panic(err)
+		log.Println(err)
 	}
 	return val
 }
@@ -22,7 +22,7 @@ func (r *Redis) Get(key string) string {
 func (r *Redis) Set(key, val string) {
 	err := r.Rediscli.Set(key, val, 0).Err()
 	if err != nil {
-		panic(err)
+		log.Println(err)
 	}
 }
 
