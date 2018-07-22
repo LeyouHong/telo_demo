@@ -15,4 +15,7 @@ make clean && make && make docker && docker-compose up -d && make test
 ## Use
 
 use postman to test :
-![](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/result.png)
+![result](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/result.png)
+
+## CICD result
+![result](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/cicd.png)
