@@ -1,3 +1,9 @@
 NewYork location
 Michael person
 Google business
+Springfield location
+Bill person
+Facebook business
+SanJose location
+Trump person
+Amazon business
