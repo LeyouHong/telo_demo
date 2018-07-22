@@ -1,9 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+	"log"
+)
 
-func TestHello(t *testing.T) {
-	if HelloWorld() != "Hello World, golang workshop!" {
-		t.Error("Testing error")
-	}
+func TestQequest(t *testing.T) {
+	log.Println("success")
 }

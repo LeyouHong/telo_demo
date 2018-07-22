@@ -8,5 +8,8 @@ build_linux_i386:
 docker:
 	docker build -t lhong/telo .
 
+clean:
+	rm -rf release
+
 test:
 	go test -v .
