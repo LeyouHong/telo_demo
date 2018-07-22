@@ -7,3 +7,6 @@ Facebook business
 SanJose location
 Trump person
 Amazon business
+Iow location
+Jack person
+Linkedin business
