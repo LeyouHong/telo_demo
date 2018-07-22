@@ -10,6 +10,8 @@ import (
 func Start() {
 	log.Println("Http server starting ...")
 	router := mux.NewRouter()
-	router.HandleFunc("/search/{name}", rest_api.Search).Methods("GET")
+	//router.HandleFunc("/upload", rest_api.uploadHandler)
+
+	router.HandleFunc("/search", rest_api.Search).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
