@@ -5,13 +5,9 @@ services:
     image: redis
     ports:
       - "6379:6379"
-    networks:
-      - backend
   telo:
     image: lhong/telo
     ports:
       - "8000:8000"
-    networks:
-      - backend
-networks:
-  backend:
+    links:
+      - redis
