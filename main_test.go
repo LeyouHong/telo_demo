@@ -26,7 +26,7 @@ func insertData(cli *redis.Redis) {
 
 	defer file.Close()
 
-	grpool.SetSize(10)
+	grpool.SetSize(100)
 	br := bufio.NewReader(file)
 	reading := true
 	wg := sync.WaitGroup{}

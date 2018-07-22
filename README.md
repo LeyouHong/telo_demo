@@ -11,3 +11,8 @@ Please see the [docker-compose](https://docs.docker.com/compose/install/#prerequ
 ## Run
 
 make clean && make && make docker && docker-compose up -d && make test
+
+## Use
+
+use postman to test :
+![result](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/result.png)
