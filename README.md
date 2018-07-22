@@ -15,4 +15,4 @@ make clean && make && make docker && docker-compose up -d && make test
 ## Use
 
 use postman to test :
-![result](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/result.png)
+![](https://raw.githubusercontent.com/LeyouHong/telo_demo/master/result.png)
