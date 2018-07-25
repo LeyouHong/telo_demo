@@ -7,6 +7,7 @@ import (
 	"github.com/telo_demo/config"
 	"sync"
 	"gitee.com/johng/gf/g/os/grpool"
+	"log"
 )
 
 func Search(w http.ResponseWriter, r *http.Request) {
@@ -17,13 +18,14 @@ func Search(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(b, &m)
 
 	res := process(m)
+	log.Println(string(res))
 	w.Write(res)
 }
 
 func process(m config.Inputs) []byte {
 	size := len(m.Names)
-	if size > 1000 {
-		size = 1000
+	if size > 10000 {
+		size = 10000
 	}
 
 	grpool.SetSize(size)
