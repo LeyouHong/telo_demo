@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
-	"github.com/telo_demo/config"
+	"github.com/LeyouHong/telo_demo/config"
 	"sync"
 	"gitee.com/johng/gf/g/os/grpool"
 	"log"

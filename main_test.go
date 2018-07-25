@@ -9,7 +9,7 @@ import (
 	"sync"
 	"io"
 	"strings"
-	"github.com/telo_demo/redis"
+	"github.com/LeyouHong/telo_demo/redis"
 )
 
 func TestInsertData(t *testing.T) {

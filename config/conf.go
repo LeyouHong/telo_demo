@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/telo_demo/redis"
+	"github.com/LeyouHong/telo_demo/redis"
 	"sync"
 )
 

@@ -4,7 +4,7 @@ import (
 	"log"
 	"github.com/gorilla/mux"
 	"net/http"
-	"github.com/telo_demo/rest_api"
+	"github.com/LeyouHong/telo_demo/rest_api"
 )
 
 func Start() {

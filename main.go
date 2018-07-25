@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/telo_demo/httpserver"
-	"github.com/telo_demo/cache"
+	"github.com/LeyouHong/telo_demo/httpserver"
+	"github.com/LeyouHong/telo_demo/cache"
 )
 
 func main() {
