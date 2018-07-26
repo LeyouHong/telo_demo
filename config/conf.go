@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/LeyouHong/telo_demo/redis"
 	"sync"
+	sh "github.com/eaigner/shield"
 )
 
 type SafeMap struct {
@@ -33,6 +33,27 @@ type Inputs struct {
 	Names []string `json:"names"`
 }
 
-var Client = redis.NewRedis("redis:6379")
+type Shield struct {
+	sync.RWMutex
+	Shd sh.Shield
+}
 
+func newShield() *Shield {
+	s := new(Shield)
+	s.Shd = sh.New(
+		sh.NewEnglishTokenizer(),
+		sh.NewRedisStore("redis:6379", "",  nil, ""),
+	)
+
+	return s
+}
+
+func (s *Shield)Classify(val string) (string, error) {
+	s.Lock()
+	val, err := s.Shd.Classify(val)
+	s.Unlock()
+	return val, err
+}
+
+var Client = newShield()
 var Outputs = newSafeMap()

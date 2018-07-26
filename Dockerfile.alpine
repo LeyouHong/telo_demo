@@ -9,5 +9,6 @@ RUN apk add --no-cache ca-certificates && \
   rm -rf /var/cache/apk/*
 
 ADD release/linux/amd64/telo /bin/
+ADD data /tmp/
 
 ENTRYPOINT ["/bin/telo"]

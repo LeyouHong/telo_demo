@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"github.com/LeyouHong/telo_demo/config"
-	"sync"
-	"gitee.com/johng/gf/g/os/grpool"
 	"log"
+	"gitee.com/johng/gf/g/os/grpool"
+	"sync"
 )
 
 func Search(w http.ResponseWriter, r *http.Request) {
@@ -17,12 +17,30 @@ func Search(w http.ResponseWriter, r *http.Request) {
 	//log.Println(string(b))
 	json.Unmarshal(b, &m)
 
-	res := process(m)
+	res := process2(m)
 	log.Println(string(res))
 	w.Write(res)
 }
 
-func process(m config.Inputs) []byte {
+func process1(m config.Inputs) []byte {
+	for _, input := range m.Names {
+			val, _ := config.Client.Classify(input)
+			log.Println(val)
+			config.Outputs.WriteMap(input, val)
+
+	}
+
+
+	jsonString, err := json.Marshal(config.Outputs.MAP)
+	if err != nil {
+		return []byte("can't find anything")
+	}
+
+	return jsonString
+}
+
+
+func process2(m config.Inputs) []byte {
 	size := len(m.Names)
 	if size > 10000 {
 		size = 10000
@@ -36,7 +54,11 @@ func process(m config.Inputs) []byte {
 		v := input
 		go grpool.Add(func() {
 			//log.Println(v)
-			val := config.Client.Get(v)
+			val, err := config.Client.Classify(v)
+			if err != nil {
+				log.Println(err)
+			}
+
 			config.Outputs.WriteMap(v, val)
 			wg.Done()
 		})

@@ -10,18 +10,7 @@ Please see the [drone tutorial](https://github.com/go-training/drone-tutorial).
 Please see the [docker-compose](https://docs.docker.com/compose/install/#prerequisites)
 ## Run
 ```
-make clean && make && make docker && docker-compose up -d && make test
-```
-## issue
-if you can't get data. please see if set data into redis successful or not.
-if not success. do :
-
-```
-redis-cli -h 127.0.0.1 -p 6379
-SET NewYork Business
-SET Michale Person
-SET NewYork Business
-SET Apple business
+make clean && make && make docker && docker-compose up -d
 ```
 
 ## Use

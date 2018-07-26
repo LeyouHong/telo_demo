@@ -33,6 +33,24 @@
 			"revisionTime": "2018-07-05T11:36:35Z"
 		},
 		{
+			"checksumSHA1": "voJSgBGw+zOTMWrf74/xQGVQWhY=",
+			"path": "github.com/eaigner/shield",
+			"revision": "7e8e5f1f2c821179b9d433c42169608b3d751389",
+			"revisionTime": "2013-04-15T14:22:53Z"
+		},
+		{
+			"checksumSHA1": "2UmMbNHc8FBr98mJFN1k8ISOIHk=",
+			"path": "github.com/garyburd/redigo/internal",
+			"revision": "569eae59ada904ea8db7a225c2b47165af08735a",
+			"revisionTime": "2018-04-04T16:07:26Z"
+		},
+		{
+			"checksumSHA1": "3kM5bMyfqvdCfgQdOb01CR1aA74=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "569eae59ada904ea8db7a225c2b47165af08735a",
+			"revisionTime": "2018-04-04T16:07:26Z"
+		},
+		{
 			"checksumSHA1": "VR71lfdJIIk6KowZZHFZKyRGgwo=",
 			"path": "github.com/go-redis/redis",
 			"revision": "d4f9cc1a68a5b1dabc9d2beb12e46f366ff36853",
@@ -87,5 +105,5 @@
 			"revisionTime": "2018-06-05T21:15:56Z"
 		}
 	],
-	"rootPath": "github.com/telo_demo"
+	"rootPath": "github.com/LeyouHong/telo_demo"
 }

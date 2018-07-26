@@ -6,6 +6,7 @@ LABEL maintainer="Leyou Hong <lawrencehongengineer@gmail.com>" \
   org.label-schema.schema-version="1.0"
 
 ADD release/linux/amd64/telo /bin/
+ADD data /tmp/
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "/bin/telo", "-ping" ]
 
