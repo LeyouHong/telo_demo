@@ -23,15 +23,16 @@ func Search(w http.ResponseWriter, r *http.Request) {
 }
 
 func process1(m config.Inputs) []byte {
+	Outputs := config.NewSafeMap()
 	for _, input := range m.Names {
 			val, _ := config.Client.Classify(input)
 			log.Println(val)
-			config.Outputs.WriteMap(input, val)
+			Outputs.WriteMap(input, val)
 
 	}
 
 
-	jsonString, err := json.Marshal(config.Outputs.MAP)
+	jsonString, err := json.Marshal(Outputs.MAP)
 	if err != nil {
 		return []byte("can't find anything")
 	}
@@ -46,6 +47,8 @@ func process2(m config.Inputs) []byte {
 		size = 10000
 	}
 
+	Outputs := config.NewSafeMap()
+
 	grpool.SetSize(size)
 
 	wg := sync.WaitGroup{}
@@ -59,13 +62,13 @@ func process2(m config.Inputs) []byte {
 				log.Println(err)
 			}
 
-			config.Outputs.WriteMap(v, val)
+			Outputs.WriteMap(v, val)
 			wg.Done()
 		})
 	}
 	wg.Wait()
 
-	jsonString, err := json.Marshal(config.Outputs.MAP)
+	jsonString, err := json.Marshal(Outputs.MAP)
 	if err != nil {
 		return []byte("can't find anything")
 	}

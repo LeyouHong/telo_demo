@@ -10,7 +10,7 @@ type SafeMap struct {
 	MAP map[string]string
 }
 
-func newSafeMap() *SafeMap {
+func NewSafeMap() *SafeMap {
 	sm := new(SafeMap)
 	sm.MAP = make(map[string]string)
 	return sm
@@ -56,4 +56,4 @@ func (s *Shield)Classify(val string) (string, error) {
 }
 
 var Client = newShield()
-var Outputs = newSafeMap()
+//var Outputs = newSafeMap()
